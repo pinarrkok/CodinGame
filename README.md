@@ -1,2 +1,8 @@
 # CodinGame-Code4Life
-Scala implementation of Code4Life.
+## Pinar Kok - 20160808013
+
+First of all, I created **Sample** class to represent samples. It has *id (Int), carriedBy (Int), rank (Int), gain (String), health (Int), costs (Integer ArrayList)* variables. There is a **getId** method to get the sample id. After that, I created **Robot** class to represent the robot (me). It has the variables of *storage (Integer ArrayList), and target (String)*. 
+#
+In  the game loop, I created *samples* ArrayList to represent the samples. If a sample is created, then it will add to this ArrayList. To control and take the best sample, I use this ArrayList called *samples*. When I am choosing the sample, I check the *health* value with *maxHealth* variable in my code. If the health value of a sample is greater than maxHealth value, and if that sample is in the cloud (it is carried by nobody) then I choose this sample as *bestSample* and its health as *maxHealth*. 
+#
+I have *molecules* array to keep different types of molecules (A, B, C, D, E). And if I need more molecules than I have, I check this situation with *neededMolecule* variable which is an empty string at the beginning. After this check, if there is molecule needed more, then I go to *MOLECULES* and collect them; if there is no molecule needed more, then I go to *LABORATORY*. For these *go and connect* jobs, I created *gotoAndConnect* method. It takes *module*, *data*, *position*. (Data may be *neededMolecule* (if there is molecule needed more), or *bestSample id* (if there is no molecule needed more)). That method checks if my position is at the desired module, then CONNECT the data; if my position is not at the correct module, then GOTO the module. 
